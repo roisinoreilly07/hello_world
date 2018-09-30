@@ -1,0 +1,188 @@
+﻿<!DOCTYPE html>
+<html>
+<head> 
+<link rel="stylesheet" type="text/css" href="HelloWorld.css">
+<title>Hello World</title>
+<meta charset=utf-8>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<!-- menu_ul (margin-left:auto; margin-right:auto= no bottom margin) decide on margins for nav bar-->
+<!-- figure out how to change to active-->
+<!-- change menu width and div?-->
+<ul id="menu_ul" class="center">
+  <li><a href="#title">About</a></li>
+  <li><a href="#cameroon">Cameroon</a></li>
+  <li><a href="#italy">Italy</a></li>
+  <li><a href="#cambodia">Cambodia</a></li>
+  <li><a href="#newzealand">New Zealand</a></li>
+  <li><a href="#colombia">Colombia</a></li>
+</ul>
+<h1 id="title">Hello World</h1>
+
+<p id="p01">This is a website about the world. It has facts about five countries from around the world. Each country is from a different continent. </p>
+<br />
+
+<div id="cameroon" class="div-country">
+<h2>Cameroon</h2>
+<a href="https://en.wikipedia.org/wiki/Cameroon" target="_blank" title="Wikipedia"><img id="img01" src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Flag_of_Cameroon.svg" alt="flag of Cameroon" class="center flag" /></a>
+<script>
+function myFunction1()
+{document.getElementById("img01").src="https://c1.staticflickr.com/3/2921/14632395758_97373c8739_b.jpg"}
+</script>
+<p class="motto" title="Peace, Work, Fatherland"> <q>Paix - Travail - Patrie</q></p>
+<p>Cameroon is a country in Central Africa. The capital is <b>Yaounde&#769;</b>. <br />It has many natural features, such as: </p>
+<ul>
+	<li>beaches</li>
+    <li>deserts</li>
+    <li>mountains</li>
+    <li>rainforests</li>
+    <li>savannas</li>
+</ul>
+<button class="img_button center" onclick="myFunction1()"> Click me! </button>
+<p> French and English are the official languages of Cameroon. You can use the form below to learn how to say your name and age in French.</p>
+<form  id="form1" action="javascript:void(0);" autocomplete="on">
+  First name:<br />
+  <input id="field1" type="text" name="firstname" />
+  <br />
+  <br />
+  <script>
+function myFunction4()
+{document.getElementById("cameroon-translate").innerHTML="Mon nom est "+document.getElementById("form1").elements[0].value+"."}
+</script>
+  <input class="button" type="submit" value="Submit" onclick="myFunction4()" />
+  <p id="cameroon-translate"></p>
+</form>
+</div>
+<br />
+
+<div id="italy" class="div-country">
+<h2>Italy</h2>
+<a href="https://en.wikipedia.org/wiki/Italy" target="_blank" title="Wikipedia"><div align="center">
+<div id=flag_green></div><div id=flag_white></div><div id=flag_red1></div>
+</div></a>
+<br />
+<p id="flag_p">Italy is a country in southern Europe. The capital is <b>Rome</b>. Italian is the official language. <br> The top 3 largest cities in Italy are:</p>
+<ol>
+	<li>Rome</li>
+    <li>Milan</li>
+    <li>Naples</li>
+</ol> 
+<div class="image-container-row" >
+<div class="img-container1">
+<img src="https://www.publicdomainpictures.net/pictures/220000/velka/tourists-in-italy.jpg" alt="Italian street" style="width:100%" />
+</div>
+<div class="img-container1">
+<img src="https://www.publicdomainpictures.net/pictures/210000/velka/sorrento-italy.jpg" alt="Sorrento" style="width:100%" />
+</div>
+<div class="img-container2">
+<img src="https://c1.staticflickr.com/8/7610/16800139540_36cf1bde89_b.jpg" alt="Colosseum" style="width:100%;" />
+</div>
+</div>
+<p> Italian is the official language of Italy. You can use the form below to learn how to say your name in Italian.</p>
+<form  id="form2" action="javascript:void(0);" autocomplete="on">
+  First name:<br />
+  <input id="field1" type="text" name="firstname" />
+  <br />
+  <br />
+  <script>
+function myFunction5()
+{document.getElementById("italy-translate").innerHTML="Mi chiamo "+document.getElementById("form2").elements[0].value+"."}
+</script>
+  <input class="button" type="submit" value="Submit" onclick="myFunction5()" />
+  <p id="italy-translate"></p>
+</form>
+</div>
+<br />
+
+<div id="cambodia" class="div-country">
+<h2>Cambodia</h2>
+<a href="https://en.wikipedia.org/wiki/Cambodia" target="_blank" title="Wikipedia"><img id="img02" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Flag_of_Cambodia.svg/255px-Flag_of_Cambodia.svg.png" alt="flag of Cambodia"  class="center flag" /></a>
+<script>
+function myFunction2()
+{document.getElementById("img02").src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5F9uZOuY1YGCdgs0pXDTR6aYzK6ebJQfug9Y8XJVYt6djjLUzYg"}
+</script>
+<p class="motto" title="Nation, Religion, King"> <q>ជាតិ សាសនា ព្រះមហាក្សត្រ</q></p>
+<p>Cambodia is a country in Southeast Asia. The capital is <b>Phnom Penh</b>.</p>
+<button class="img_button center" onclick="myFunction2()"> Click me! </button>
+<p> Khmer is the official language of Cambodia. You can use the form below to learn how to say your name in Khmer.</p>
+<form  id="form3" action="javascript:void(0);" autocomplete="on">
+  First name:<br />
+  <input id="field1" type="text" name="firstname" />
+  <br />
+  <br />
+  <script>
+function myFunction6()
+{document.getElementById("cambodia-translate").innerHTML="ឈ្មោះ​របស់ខ្ញុំ​គឺ "+document.getElementById("form3").elements[0].value+"."}
+</script>
+  <input class="button" type="submit" value="Submit" onclick="myFunction6()" />
+  <p id="cambodia-translate"></p>
+</form>
+</div>
+<br />
+
+<div id="newzealand" class="div-country">
+<h2>New Zealand</h2>
+<a href="https://en.wikipedia.org/wiki/New_Zealand" target="_blank" title="Wikipedia"><img id="img03" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Flag_of_New_Zealand.svg/2000px-Flag_of_New_Zealand.svg.png" alt="flag of New Zealand"  class="center flag" /></a>
+<script>
+function myFunction3()
+{document.getElementById("img03").src="https://c1.staticflickr.com/4/3132/2634401177_8f8ba8183f_b.jpg"}
+</script>
+<p>New Zealand is a country that consists of two islands located in the southwestern Pacific Ocean. The capital is <b>Wellington</b>, which is on the North Island.</p>
+<button class="img_button center" onclick="myFunction3()"> Click me! </button>
+<p> English, Maori, and NZ sign language are the official languages of New Zealand. You can use the form below to learn how to say your name in Maori.</p>
+<form  id="form4" action="javascript:void(0);" autocomplete="on">
+  First name:<br />
+  <input id="field1" type="text" name="firstname" />
+  <br />
+  <br />
+  <script>
+function myFunction7()
+{document.getElementById("newzealand-translate").innerHTML="Ko toku ingoa "+document.getElementById("form4").elements[0].value+"."}
+</script>
+  <input  class="button" type="submit" value="Submit" onclick="myFunction7()" />
+  <p id="newzealand-translate"></p>
+</form>
+</div>
+<br />
+
+<div id="colombia" class="div-country">
+<h2>Colombia</h2>
+<a href="https://en.wikipedia.org/wiki/Colombia" target="_blank" title="Wikipedia"><div align="center">
+<div id=flag_gold></div>
+<div id=flag_gold></div>
+<div id=flag_blue></div>
+<div id=flag_red2></div>
+</div></a>
+<p class="motto" title="Freedom and order"> <q>Libertad y orden</q></p>
+<p>Colombia is a country in South America. The capital is <b>Bogota&#769;</b>.</p>
+<div class="image-container-row">
+<div class="img-container3">
+<img src="https://c1.staticflickr.com/8/7399/27115609185_5bb6574ee5_b.jpg" alt="Bogota" style="width:100%" />
+</div>
+<div class="img-container4">
+<img src="https://c1.staticflickr.com/1/360/32199414235_7bc54daede_b.jpg" alt="Chritmas lights" style="width:100%" />
+</div>
+<div class="img-container5">
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Atardecer_en_Cartagena_de_Indias_desde_La_Popa..jpg" alt="city" style="width:100%" />
+<!-- centre row of images-->
+</div>
+</div>
+<p style="clear:both"> Spanish is the official language of Colombia. You can use the form below to learn how to say your name in Spanish.</p>
+<form  id="form5" action="javascript:void(0);" autocomplete="on">
+  First name:<br />
+  <input id="field1" type="text" name="firstname" />
+  <br />
+  <br />
+  <script>
+function myFunction8()
+{document.getElementById("colombia-translate").innerHTML="Me llamo es "+document.getElementById("form5").elements[0].value+"."}
+</script>
+  <input class="button" type="submit" value="Submit" onclick="myFunction8()" />
+  <p id="colombia-translate"></p>
+</form>
+</div>
+
+</body>
+</html>
