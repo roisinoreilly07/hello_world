@@ -5,19 +5,31 @@
 	overflow-y: auto
 }
 
-h1, h2 {
-	text-align: center;
-	color: darkslategrey;
+::-moz-selection { 
+    color: whitesmoke;
+    background: darkslategrey;
 }
 
-h1 {
-	font-size: 6vw;
-	margin-left: 20%;
-	margin-right: 2.5%;
+::selection {
+    color: whitesmoke;
+    background: darkslategrey;
 }
 
-h2 {
-	font-size: 4.6vw;
+.center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#menu_ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 10px;
+	width: 15%;
+	height: 85%;
+	position: fixed;
+	overflow: auto;
+	background-color: darkslategrey;
 }
 
 li a {
@@ -36,10 +48,23 @@ li a:hover {
 	background-color: #253f3f;
 }
 
-table {
-	width: 30vw;
-	height: 15vw;
-	max-width: 100%;
+li a:active {
+	background-color: #253f3f;
+}
+
+h1, h2 {
+	text-align: center;
+	color: darkslategrey;
+}
+
+h1 {
+	font-size: 6vw;
+	margin-left: 20%;
+	margin-right: 2.5%;
+}
+
+h2 {
+	font-size: 4.6vw;
 }
 
 img {
@@ -47,6 +72,13 @@ img {
 	height: auto;
 }
 
+.flag_link {
+	text-align:center;
+	margin: 0 auto;
+	display:block;
+}
+
+/*figure out font sizes*/ 
 #p01, .div-country {
 	background-color: whitesmoke;
 	border: 2px solid darkslategrey;
@@ -60,54 +92,19 @@ img {
 	font-size:1.75vw
 }
 
+.flag {
+	width: 40%;
+}
+
+.motto {
+	font-family: impact;
+	font-size: 3.2vw;
+	text-align: center;
+	color: darkslategrey;
+}
+
 ul {
 	list-style-type: square;
-}
-
-#menu_ul {
-	list-style-type: none;
-	margin: 0;
-	padding: 10px;
-	width: 15%;
-	height: 85%;
-	position: fixed;
-	overflow: auto;
-	background-color: darkslategrey;
-}
-
-#flag_green, #flag_white, #flag_red1 {
-	width: 13.33%;
-	height: 15vw;
-	display: inline-block;
-}
-
-#flag_green {
-	background: green;
-}
-
-#flag_white {
-	background: white;
-}
-
-#flag_red1, #flag_red2 {
-	background: red;
-}
-
-#flag_gold, #flag_blue, #flag_red2 {
-	width: 40%;
-	height: 3.75vw;
-}
-
-#flag_gold {
-	background: gold;
-}
-
-#flag_blue {
-	background: blue;
-}
-
-#flag_p {
-	clear: left;
 }
 
 .button, .img_button {
@@ -117,7 +114,7 @@ ul {
 	text-align: center;
 	text-decoration: none;
 	display: inline-block;
-	font-size: 2.5vw;
+	font-size: 1.9vw;
 	cursor: pointer;
 	font-family: courier;
 	-webkit-transition-duration: 0.4s;
@@ -130,29 +127,13 @@ ul {
 }
 
 .img_button {
-	margin: 25px;
-	padding: 9px;
+	margin: 30px auto;
+	padding: 7px;
+	display:block;
 }
 
 .button:hover, .img_button:hover {
 	background-color: #1c2f2f;
-}
-
-.center {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.flag {
-	width: 40%;
-}
-
-.motto {
-	font-family: impact;
-	font-size: 3.2vw;
-	text-align: center;
-	color: darkslategrey;
 }
 
 .image-container-row::after {
@@ -189,3 +170,5 @@ ul {
 .img-container5 {
 	width: 31.5%;
 }
+
+

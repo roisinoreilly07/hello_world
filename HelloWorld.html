@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-<!-- test comment >
 <!-- menu_ul (margin-left:auto; margin-right:auto= no bottom margin) decide on margins for nav bar-->
 <!-- figure out how to change to active-->
 <!-- change menu width and div?-->
+<!-- media query menu and images-->
 <ul id="menu_ul" class="center">
   <li><a href="#title">About</a></li>
   <li><a href="#cameroon">Cameroon</a></li>
@@ -26,7 +26,9 @@
 
 <div id="cameroon" class="div-country">
 <h2>Cameroon</h2>
-<a href="https://en.wikipedia.org/wiki/Cameroon" target="_blank" title="Wikipedia"><img id="img01" src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Flag_of_Cameroon.svg" alt="flag of Cameroon" class="center flag" /></a>
+<div class="flag_link">
+<a href="https://en.wikipedia.org/wiki/Cameroon" target="_blank" title="Wikipedia"><img id="img01" src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Flag_of_Cameroon.svg" alt="flag of Cameroon" class="flag" /></a>
+</div>
 <script>
 function change_img01()
 {document.getElementById("img01").src="https://c1.staticflickr.com/3/2921/14632395758_97373c8739_b.jpg"}
@@ -57,13 +59,13 @@ function translate_French()
 </div>
 <br />
 
-<div id="italy" class="div-country">
+<div class="div-country">
 <h2>Italy</h2>
-<a href="https://en.wikipedia.org/wiki/Italy" target="_blank" title="Wikipedia"><div align="center">
-<div id=flag_green></div><div id=flag_white></div><div id=flag_red1></div>
-</div></a>
+<div class="flag_link">
+<a href="https://en.wikipedia.org/wiki/Italy" target="_blank" title="Wikipedia"> <img src="https://upload.wikimedia.org/wikipedia/en/0/03/Flag_of_Italy.svg" alt="flag of Italy" class="flag" /> </a>
+</div>
 <br />
-<p id="flag_p">Italy is a country in southern Europe. The capital is <b>Rome</b>. Italian is the official language. <br> The top 3 largest cities in Italy are:</p>
+<p>Italy is a country in southern Europe. The capital is <b>Rome</b>. Italian is the official language. <br> The top 3 largest cities in Italy are:</p>
 <ol>
 	<li>Rome</li>
     <li>Milan</li>
@@ -98,7 +100,9 @@ function translate_Italian()
 
 <div id="cambodia" class="div-country">
 <h2>Cambodia</h2>
-<a href="https://en.wikipedia.org/wiki/Cambodia" target="_blank" title="Wikipedia"><img id="img02" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Flag_of_Cambodia.svg/255px-Flag_of_Cambodia.svg.png" alt="flag of Cambodia"  class="center flag" /></a>
+<div class="flag_link">
+<a href="https://en.wikipedia.org/wiki/Cambodia" target="_blank" title="Wikipedia"><img id="img02" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Flag_of_Cambodia.svg/255px-Flag_of_Cambodia.svg.png" alt="flag of Cambodia"  class="flag" /></a>
+</div>
 <script>
 function change_img02()
 {document.getElementById("img02").src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5F9uZOuY1YGCdgs0pXDTR6aYzK6ebJQfug9Y8XJVYt6djjLUzYg"}
@@ -124,7 +128,9 @@ function translate_Cambodian()
 
 <div id="newzealand" class="div-country">
 <h2>New Zealand</h2>
-<a href="https://en.wikipedia.org/wiki/New_Zealand" target="_blank" title="Wikipedia"><img id="img03" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Flag_of_New_Zealand.svg/2000px-Flag_of_New_Zealand.svg.png" alt="flag of New Zealand"  class="center flag" /></a>
+<div class="flag_link">
+<a href="https://en.wikipedia.org/wiki/New_Zealand" target="_blank" title="Wikipedia"><img id="img03" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Flag_of_New_Zealand.svg/2000px-Flag_of_New_Zealand.svg.png" alt="flag of New Zealand"  class="flag" /></a>
+</div>
 <script>
 function change_img03()
 {document.getElementById("img03").src="https://c1.staticflickr.com/4/3132/2634401177_8f8ba8183f_b.jpg"}
@@ -149,12 +155,9 @@ function translate_Maori()
 
 <div id="colombia" class="div-country">
 <h2>Colombia</h2>
-<a href="https://en.wikipedia.org/wiki/Colombia" target="_blank" title="Wikipedia"><div align="center">
-<div id=flag_gold></div>
-<div id=flag_gold></div>
-<div id=flag_blue></div>
-<div id=flag_red2></div>
-</div></a>
+<div class="flag_link">
+<a href="https://en.wikipedia.org/wiki/Colombia" target="_blank" title="Wikipedia"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Colombia.svg/255px-Flag_of_Colombia.svg.png" alt="flag of Colombia" class="flag" /> </a>
+</div>
 <p class="motto" title="Freedom and order"> <q>Libertad y orden</q></p>
 <p>Colombia is a country in South America. The capital is <b>Bogota&#769;</b>.</p>
 <div class="image-container-row">
