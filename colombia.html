@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<link rel="stylesheet" type="text/css" href="HelloWorld.css">
+<title>Hello World</title>
+<meta charset=utf-8>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<!-- menu_ul (margin-left:auto; margin-right:auto= no bottom margin) decide on margins for nav bar-->
+<!-- figure out how to change to active-->
+<!-- change menu width and div?-->
+<!-- media query menu and images-->
+<ul id="menu_ul" class="center">
+  <li class="menu_li"><a href="HelloWorld.html">About</a></li>
+  <li class="menu_li"><a href="cameroon.html">Cameroon</a></li>
+  <li class="menu_li"><a href="italy.html">Italy</a></li>
+  <li class="menu_li"><a href="cambodia.html">Cambodia</a></li>
+  <li class="menu_li"><a href="newzealand.html">New Zealand</a></li>
+  <li class="menu_li"><a href="colombia.html">Colombia</a></li>
+</ul>
+<h1 id="title">Hello World</h1>
+<div id="colombia" class="div-country">
+<h2>Colombia</h2>
+<div class="flag_link">
+<a href="https://en.wikipedia.org/wiki/Colombia" target="_blank" title="Wikipedia"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Colombia.svg/255px-Flag_of_Colombia.svg.png" alt="flag of Colombia" class="flag" /> </a>
+</div>
+<p class="motto" title="Freedom and order"> <q>Libertad y orden</q></p>
+<p>Colombia is a country in South America. The capital is <b>Bogota&#769;</b>.</p>
+<div class="image-container-row">
+<div class="img-container3">
+<img src="https://c1.staticflickr.com/8/7399/27115609185_5bb6574ee5_b.jpg" alt="Bogota" style="width:100%" />
+</div>
+<div class="img-container4">
+<img src="https://c1.staticflickr.com/1/360/32199414235_7bc54daede_b.jpg" alt="Chritmas lights" style="width:100%" />
+</div>
+<div class="img-container5">
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Atardecer_en_Cartagena_de_Indias_desde_La_Popa..jpg" alt="city" style="width:100%" />
+<!-- centre row of images-->
+</div>
+</div>
+<p style="clear:both"> Spanish is the official language of Colombia. You can use the form below to learn how to say your name in Spanish.</p>
+<div class="form_div center">
+<form  id="form5" action="javascript:void(0);" autocomplete="on">
+  First name:<br />
+  <input id="field1" type="text" name="firstname" />
+  <br />
+  <br />
+  <script>
+function translate_Spanish()
+{document.getElementById("colombia-translate").innerHTML="Me llamo es "+document.getElementById("form5").elements[0].value+"."}
+</script>
+  <input class="button" type="submit" value="Submit" onclick="translate_Spanish()" />
+  <p id="colombia-translate"></p>
+</form>
+</div>
+<p> In Colombia they use the Colombian Peso as their currency. You can use the currency converter below to change euros to COP. </ p>
+<div class="form_div center">
+<form id="coverter_form4" action="javascript:void(0);">
+	Amount (&euro;):<br />
+	<input id="euros" type="number" name="quantity" />
+	<br />
+	<br />
+	<script>
+function convert_COP()
+{var variable = document.getElementById('euros').value;
+  document.getElementById('COP_converted').innerHTML = "&euro;"+variable+" is worth "+3569.58*variable+" COP.";}
+</script>
+<input class="button" type="submit" value="Submit" onclick="convert_COP()" />
+  <p id="COP_converted"></p>
+</form> 
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<link rel="stylesheet" type="text/css" href="HelloWorld.css">
+<title>Hello World</title>
+<meta charset=utf-8>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<!-- menu_ul (margin-left:auto; margin-right:auto= no bottom margin) decide on margins for nav bar-->
+<!-- figure out how to change to active-->
+<!-- change menu width and div?-->
+<!-- media query menu and images-->
+<ul id="menu_ul" class="center">
+  <li class="menu_li"><a href="HelloWorld.html">About</a></li>
+  <li class="menu_li"><a href="cameroon.html">Cameroon</a></li>
+  <li class="menu_li"><a href="italy.html">Italy</a></li>
+  <li class="menu_li"><a href="cambodia.html">Cambodia</a></li>
+  <li class="menu_li"><a href="newzealand.html">New Zealand</a></li>
+  <li class="menu_li"><a href="colombia.html">Colombia</a></li>
+</ul>
+<h1 id="title">Hello World</h1>
+<div id="cambodia" class="div-country">
+<h2>Cambodia</h2>
+<div class="flag_link">
+<a href="https://en.wikipedia.org/wiki/Cambodia" target="_blank" title="Wikipedia"><img id="img02" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Flag_of_Cambodia.svg/255px-Flag_of_Cambodia.svg.png" alt="flag of Cambodia"  class="flag" /></a>
+</div>
+<script>
+function change_img02()
+{document.getElementById("img02").src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5F9uZOuY1YGCdgs0pXDTR6aYzK6ebJQfug9Y8XJVYt6djjLUzYg"}
+</script>
+<p class="motto" title="Nation, Religion, King"> <q>ជាតិ សាសនា ព្រះមហាក្សត្រ</q></p>
+<p>Cambodia is a country in Southeast Asia. The capital is <b>Phnom Penh</b>.</p>
+<button class="img_button center" onclick="change_img02()"> Click me! </button>
+<p> Khmer is the official language of Cambodia. You can use the form below to learn how to say your name in Khmer.</p>
+<div class="form_div center">
+<form  id="form3" action="javascript:void(0);" autocomplete="on">
+  First name:<br />
+  <input id="field1" type="text" name="firstname" />
+  <br />
+  <br />
+  <script>
+function translate_Cambodian()
+{document.getElementById("cambodia-translate").innerHTML="ឈ្មោះ​របស់ខ្ញុំ​គឺ "+document.getElementById("form3").elements[0].value+"."}
+</script>
+  <input class="button" type="submit" value="Submit" onclick="translate_Cambodian()" />
+  <p id="cambodia-translate"></p>
+</form>
+</div>
+<p> In Cambodia they use the Cambodian Riel as their currency. You can use the currency converter below to change euros to KHR. </ p>
+<div class="form_div center">
+<form id="coverter_form2" action="javascript:void(0);">
+	Amount (&euro;):<br />
+	<input id="euros" type="number" name="quantity" />
+	<br />
+	<br />
+	<script>
+function convert_KHR()
+{var variable = document.getElementById('euros').value;
+  document.getElementById('KHR_converted').innerHTML = "&euro;"+variable+" is worth "+4614.88*variable+" KHR.";}
+</script>
+<input class="button" type="submit" value="Submit" onclick="convert_KHR()" />
+  <p id="KHR_converted"></p>
+</form> 
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<link rel="stylesheet" type="text/css" href="HelloWorld.css">
+<title>Hello World</title>
+<meta charset=utf-8>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<!-- menu_ul (margin-left:auto; margin-right:auto= no bottom margin) decide on margins for nav bar-->
+<!-- figure out how to change to active-->
+<!-- change menu width and div?-->
+<!-- media query menu and images-->
+<ul id="menu_ul" class="center">
+  <li class="menu_li"><a href="HelloWorld.html">About</a></li>
+  <li class="menu_li"><a href="cameroon.html">Cameroon</a></li>
+  <li class="menu_li"><a href="italy.html">Italy</a></li>
+  <li class="menu_li"><a href="cambodia.html">Cambodia</a></li>
+  <li class="menu_li"><a href="newzealand.html">New Zealand</a></li>
+  <li class="menu_li"><a href="colombia.html">Colombia</a></li>
+</ul>
+<h1 id="title">Hello World</h1>
+<div id="cameroon" class="div-country">
+<h2>Cameroon</h2>
+<div class="flag_link">
+<a href="https://en.wikipedia.org/wiki/Cameroon" target="_blank" title="Wikipedia"><img id="img01" src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Flag_of_Cameroon.svg" alt="flag of Cameroon" class="flag" /></a>
+</div>
+<script>
+function change_img01()
+{document.getElementById("img01").src="https://c1.staticflickr.com/3/2921/14632395758_97373c8739_b.jpg"}
+</script>
+<p class="motto" title="Peace, Work, Fatherland"> <q>Paix - Travail - Patrie</q></p>
+<p>Cameroon is a country in Central Africa. The capital is <b>Yaounde&#769;</b>. <br />It has many natural features, such as: </p>
+<ul>
+	<li>beaches</li>
+    <li>deserts</li>
+    <li>mountains</li>
+    <li>rainforests</li>
+    <li>savannas</li>
+</ul>
+<button class="img_button center" onclick="change_img01()"> Click me! </button>
+<p> French and English are the official languages of Cameroon. You can use the form below to learn how to say your name in French.</p>
+<div class="form_div center">
+<form  id="translate_form1" action="javascript:void(0);" autocomplete="on">
+  First name:<br />
+  <input type="text" name="firstname" />
+  <br />
+  <br />
+  <script>
+function translate_French()
+{document.getElementById("cameroon-translate").innerHTML="Mon nom est "+document.getElementById("translate_form1").elements[0].value+"."}
+</script>
+  <input class="button" type="submit" value="Submit" onclick="translate_French()" />
+  <p id="cameroon-translate"></p>
+</form> 
+</div>
+<p> In Cameroon they use the Central African Franc as their currency. You can use the currency converter below to change euros to CFA. </ p>
+<div class="form_div center">
+<form id="coverter_form1" action="javascript:void(0);">
+	Amount (&euro;):<br />
+	<input id="euros" type="number" name="quantity" />
+	<br />
+	<br />
+	<script>
+function convert_CFA()
+{var variable = document.getElementById('euros').value;
+  document.getElementById('CFA_converted').innerHTML = "&euro;"+variable+" is worth "+656.53*variable+" CFA.";}
+</script>
+<input class="button" type="submit" value="Submit" onclick="convert_CFA()" />
+  <p id="CFA_converted"></p>
+</form> 
+</div>
+</body>
+</html>

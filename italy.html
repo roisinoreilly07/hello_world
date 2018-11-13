@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<link rel="stylesheet" type="text/css" href="HelloWorld.css">
+<title>Hello World</title>
+<meta charset=utf-8>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<!-- menu_ul (margin-left:auto; margin-right:auto= no bottom margin) decide on margins for nav bar-->
+<!-- figure out how to change to active-->
+<!-- change menu width and div?-->
+<!-- media query menu and images-->
+<ul id="menu_ul" class="center">
+  <li class="menu_li"><a href="HelloWorld.html">About</a></li>
+  <li class="menu_li"><a href="cameroon.html">Cameroon</a></li>
+  <li class="menu_li"><a href="italy.html">Italy</a></li>
+  <li class="menu_li"><a href="cambodia.html">Cambodia</a></li>
+  <li class="menu_li"><a href="newzealand.html">New Zealand</a></li>
+  <li class="menu_li"><a href="colombia.html">Colombia</a></li>
+</ul>
+<h1 id="title">Hello World</h1>
+<div class="div-country">
+<h2>Italy</h2>
+<div class="flag_link">
+<a href="https://en.wikipedia.org/wiki/Italy" target="_blank" title="Wikipedia"> <img src="https://upload.wikimedia.org/wikipedia/en/0/03/Flag_of_Italy.svg" alt="flag of Italy" class="flag" /> </a>
+</div>
+<br />
+<p>Italy is a country in southern Europe. The capital is <b>Rome</b>. Italian is the official language. <br> The top 3 largest cities in Italy are:</p>
+<ol>
+	<li>Rome</li>
+    <li>Milan</li>
+    <li>Naples</li>
+</ol> 
+<div class="image-container-row" >
+<div class="img-container1">
+<img src="https://www.publicdomainpictures.net/pictures/220000/velka/tourists-in-italy.jpg" alt="Italian street" style="width:100%" />
+</div>
+<div class="img-container1">
+<img src="https://www.publicdomainpictures.net/pictures/210000/velka/sorrento-italy.jpg" alt="Sorrento" style="width:100%" />
+</div>
+<div class="img-container2">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3Ozm6Sa58atsZRoDyXCGHaebsMQm6alRQ8YH8hkW_My4z0Wm0" alt="Colosseum" style="width:100%;" />
+</div>
+</div>
+<p> Italian is the official language of Italy. You can use the form below to learn how to say your name in Italian.</p>
+<div class="form_div center">
+<form  id="form2" action="javascript:void(0);" autocomplete="on">
+  First name:<br />
+  <input id="field1" type="text" name="firstname" />
+  <br />
+  <br />
+  <script>
+function translate_Italian()
+{document.getElementById("italy-translate").innerHTML="Mi chiamo "+document.getElementById("form2").elements[0].value+"."}
+</script>
+  <input class="button" type="submit" value="Submit" onclick="translate_Italian()" />
+  <p id="italy-translate"></p>
+</form>
+</div>
+
+</div>
+</body>
+</html>

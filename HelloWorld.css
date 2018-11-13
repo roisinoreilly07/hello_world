@@ -2,7 +2,7 @@
 	background-color: seagreen; 
 	font-family: courier, monospace; 
 	overflow-x: hidden; 
-	overflow-y: auto
+	overflow-y: auto;
 }
 
 ::-moz-selection { 
@@ -32,7 +32,7 @@
 	background-color: darkslategrey;
 }
 
-li a {
+.menu_li a {
 	color: whitesmoke;
 	display: block;
 	padding: 8px 16px;
@@ -44,11 +44,11 @@ li a {
 	transition-duration: 0.4s;
 }
 
-li a:hover {
+.menu_li a:hover {
 	background-color: #253f3f;
 }
 
-li a:active {
+.menu_li a:active {
 	background-color: #253f3f;
 }
 
@@ -79,7 +79,7 @@ img {
 }
 
 /*figure out font sizes*/ 
-#p01, .div-country {
+.div-country {
 	background-color: whitesmoke;
 	border: 2px solid darkslategrey;
 	padding: 4%;
@@ -105,6 +105,21 @@ img {
 
 ul {
 	list-style-type: square;
+}
+
+.form_div {
+	background-color: #e8e8e8;
+	padding: 20px;
+	width: 85%;
+}
+
+input[type=text] {
+	padding: 5px;
+	border: 1px solid darkslategrey;
+}
+
+input[type=text]:focus {
+    border: 2px solid darkslategrey;
 }
 
 .button, .img_button {
@@ -168,7 +183,7 @@ ul {
 }
 
 .img-container5 {
-	width: 31.5%;
+	width: 32%;
 }
 
 
