@@ -56,7 +56,8 @@ function translate_Maori()
 	<script>
 function convert_NZ$()
 {var variable = document.getElementById('euros').value;
-  document.getElementById('NZ$_converted').innerHTML = "&euro;"+variable+" is worth "+1.68*variable+" NZ$.";}
+ var money = 1.68*variable
+  document.getElementById('NZ$_converted').innerHTML = "&euro;"+variable+" is worth "+money.toFixed(2)+" NZ$.";}
 </script>
 <input class="button" type="submit" value="Submit" onclick="convert_NZ$()" />
   <p id="NZ$_converted"></p>

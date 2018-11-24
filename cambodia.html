@@ -57,7 +57,8 @@ function translate_Cambodian()
 	<script>
 function convert_KHR()
 {var variable = document.getElementById('euros').value;
-  document.getElementById('KHR_converted').innerHTML = "&euro;"+variable+" is worth "+4614.88*variable+" KHR.";}
+ var money = 4614.88*variable
+  document.getElementById('KHR_converted').innerHTML = "&euro;"+variable+" is worth "+money.toFixed(2)+" KHR.";}
 </script>
 <input class="button" type="submit" value="Submit" onclick="convert_KHR()" />
   <p id="KHR_converted"></p>

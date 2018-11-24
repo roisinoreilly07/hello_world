@@ -64,7 +64,8 @@ function translate_Spanish()
 	<script>
 function convert_COP()
 {var variable = document.getElementById('euros').value;
-  document.getElementById('COP_converted').innerHTML = "&euro;"+variable+" is worth "+3569.58*variable+" COP.";}
+ var money = 3569.58*variable
+  document.getElementById('COP_converted').innerHTML = "&euro;"+variable+" is worth "+money.toFixed(2)+" COP.";}
 </script>
 <input class="button" type="submit" value="Submit" onclick="convert_COP()" />
   <p id="COP_converted"></p>

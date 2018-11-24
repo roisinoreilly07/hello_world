@@ -62,9 +62,44 @@ function translate_French()
 	<br />
 	<br />
 	<script>
-function convert_CFA()
-{var variable = document.getElementById('euros').value;
-  document.getElementById('CFA_converted').innerHTML = "&euro;"+variable+" is worth "+656.53*variable+" CFA.";}
+function get_exchange_rate(curr_key_1, curr_key_2) {
+	var xhttp = new XMLHttpRequest();
+	var base_url = "https://free.currencyconverterapi.com/api/v6/convert?q=";
+	// curr_key_1="EUR"
+	// curr_key_2="USD"
+	var curr_1_2_key = curr_key_1 + "_" + curr_key_2;
+	var url= base_url + curr_1_2_key + "&compact=y";
+	xhttp.open("GET", url, false);
+	xhttp.send();
+	var responseJSON = JSON.parse(xhttp.responseText);
+	return responseJSON[curr_1_2_key]["val"];
+}
+
+function convert_CFA() {
+	console.log("hi")
+	var eur_input = document.getElementById('euros').value;
+	var x = get_exchange_rate( "EUR", "XAF");
+	var result = eur_input*x;
+	document.getElementById("CFA_converted").innerHTML =
+		"&euro;"+eur_input+" is worth "+ result.toFixed(2) +" CFA.";
+		
+	/*var xhttp = new XMLHttpRequest();
+	
+	xhttp.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			var jsonResponse = JSON.parse(this.responseText);
+			var exchangeRate = jsonResponse["EUR_XAF"]["val"];
+			var value_in_other_currency = eur_input*exchangeRate;
+			document.getElementById("CFA_converted").innerHTML = 
+				"&euro;"+eur_input+" is worth "+ (JSON.parse(this.responseText)["EUR_XAF"]["val"]*variable).toFixed(2) +" CFA.";
+		}
+	};
+	var url = "https://free.currencyconverterapi.com/api/v6/convert?q=EUR_XAF&compact=y";
+	xhttp.open("GET", url, true);
+	xhttp.send();
+	*/
+}	
+	
 </script>
 <input class="button" type="submit" value="Submit" onclick="convert_CFA()" />
   <p id="CFA_converted"></p>
