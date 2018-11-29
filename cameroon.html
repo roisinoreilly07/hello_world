@@ -54,19 +54,19 @@ function translate_French()
   <p id="cameroon-translate"></p>
 </form> 
 </div>
-<p> In Cameroon they use the Central African Franc as their currency. You can use the currency converter below to change euros to CFA. </ p>
+<p> In Cameroon they use the Central African Franc as their currency. You can use the currency converter below to change currency. </ p>
 <div class="form_div center">
 <form id="coverter_form1" action="javascript:void(0);">
-	Amount (&euro;):<br />
-	<input id="euros" type="number" name="quantity" />
+<input id="curr1_to_curr2" type=radio name=currency /> Convert EUR to CFA <br />
+<input id="curr2_to_curr1" type=radio name=currency /> Convert CFA to EUR <br />
+	Amount:<br />
+	<input id="money" type="number" name="quantity" />
 	<br />
 	<br />
 	<script>
 function get_exchange_rate(curr_key_1, curr_key_2) {
 	var xhttp = new XMLHttpRequest();
 	var base_url = "https://free.currencyconverterapi.com/api/v6/convert?q=";
-	// curr_key_1="EUR"
-	// curr_key_2="USD"
 	var curr_1_2_key = curr_key_1 + "_" + curr_key_2;
 	var url= base_url + curr_1_2_key + "&compact=y";
 	xhttp.open("GET", url, false);
@@ -75,34 +75,24 @@ function get_exchange_rate(curr_key_1, curr_key_2) {
 	return responseJSON[curr_1_2_key]["val"];
 }
 
-function convert_CFA() {
+function convert_currency() {
 	console.log("hi")
-	var eur_input = document.getElementById('euros').value;
+	var money_input = document.getElementById('money').value;
 	var x = get_exchange_rate( "EUR", "XAF");
-	var result = eur_input*x;
-	document.getElementById("CFA_converted").innerHTML =
-		"&euro;"+eur_input+" is worth "+ result.toFixed(2) +" CFA.";
-		
-	/*var xhttp = new XMLHttpRequest();
-	
-	xhttp.onreadystatechange = function() {
-		if (this.readyState == 4 && this.status == 200) {
-			var jsonResponse = JSON.parse(this.responseText);
-			var exchangeRate = jsonResponse["EUR_XAF"]["val"];
-			var value_in_other_currency = eur_input*exchangeRate;
-			document.getElementById("CFA_converted").innerHTML = 
-				"&euro;"+eur_input+" is worth "+ (JSON.parse(this.responseText)["EUR_XAF"]["val"]*variable).toFixed(2) +" CFA.";
+	if (document.getElementById("curr1_to_curr2").checked) {
+	var result = money_input*x;
+	document.getElementById("currency_converted").innerHTML =
+		"&euro;"+money_input+" is worth "+ result.toFixed(2) +" CFA.";
+	}
+	else if (document.getElementById("curr2_to_curr1").checked) {
+	var result = money_input/x;
+	document.getElementById("currency_converted").innerHTML =
+		money_input+" CFA is worth &euro;"+ result.toFixed(2);
 		}
-	};
-	var url = "https://free.currencyconverterapi.com/api/v6/convert?q=EUR_XAF&compact=y";
-	xhttp.open("GET", url, true);
-	xhttp.send();
-	*/
 }	
-	
 </script>
-<input class="button" type="submit" value="Submit" onclick="convert_CFA()" />
-  <p id="CFA_converted"></p>
+<input class="button" type="submit" value="Submit" onclick="convert_currency()" />
+  <p id="currency_converted"></p>
 </form> 
 </div>
 </body>

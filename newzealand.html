@@ -49,18 +49,42 @@ function translate_Maori()
 <p> In New Zealand they use the New Zealand Dollar as their currency. You can use the currency converter below to change euros to NZ$. </ p>
 <div class="form_div center">
 <form id="coverter_form3" action="javascript:void(0);">
-	Amount (&euro;):<br />
-	<input id="euros" type="number" name="quantity" />
+<input id="curr1_to_curr2" type=radio name=currency /> Convert EUR to NZD <br />
+<input id="curr2_to_curr1" type=radio name=currency /> Convert NZD to EUR <br />
+	Amount:<br />
+	<input id="money" type="number" name="quantity" />
 	<br />
 	<br />
 	<script>
-function convert_NZ$()
-{var variable = document.getElementById('euros').value;
- var money = 1.68*variable
-  document.getElementById('NZ$_converted').innerHTML = "&euro;"+variable+" is worth "+money.toFixed(2)+" NZ$.";}
+  function get_exchange_rate(curr_key_1, curr_key_2) {
+	var xhttp = new XMLHttpRequest();
+	var base_url = "https://free.currencyconverterapi.com/api/v6/convert?q=";
+	var curr_1_2_key = curr_key_1 + "_" + curr_key_2;
+	var url= base_url + curr_1_2_key + "&compact=y";
+	xhttp.open("GET", url, false);
+	xhttp.send();
+	var responseJSON = JSON.parse(xhttp.responseText);
+	return responseJSON[curr_1_2_key]["val"];
+}
+
+function convert_currency() {
+	console.log("hi")
+	var money_input = document.getElementById('money').value;
+	var x = get_exchange_rate( "EUR", "NZD");
+	if (document.getElementById("curr1_to_curr2").checked) {
+	var result = money_input*x;
+	document.getElementById("currency_converted").innerHTML =
+		"&euro;"+money_input+" is worth "+ result.toFixed(2) +" NZD.";
+	}
+	else if (document.getElementById("curr2_to_curr1").checked) {
+	var result = money_input/x;
+	document.getElementById("currency_converted").innerHTML =
+		money_input+" NZD is worth &euro;"+ result.toFixed(2);
+		}
+}
 </script>
-<input class="button" type="submit" value="Submit" onclick="convert_NZ$()" />
-  <p id="NZ$_converted"></p>
+<input class="button" type="submit" value="Submit" onclick="convert_currency()" />
+  <p id="currency_converted"></p>
 </form> 
 </div>
 </div>
