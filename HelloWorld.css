@@ -123,9 +123,9 @@ input[type=text]:focus {
 }
 
 .button, .img_button {
-	background-color: darkslategrey;
+	background-color: #395f5f;
 	color: whitesmoke;
-	border: 2px solid #253f3f;
+	border: 2px solid darkslategrey;
 	text-align: center;
 	text-decoration: none;
 	display: inline-block;
@@ -185,5 +185,127 @@ input[type=text]:focus {
 .img-container5 {
 	width: 32%;
 }
+
+.custom_select {
+	position:relative;
+	width: 200px;
+	font-family: courier;
+	color: whitesmoke;
+}
+
+.custom_select select {
+	display:none;
+}
+
+.select-selected {
+	background-color:#395f5f
+}
+
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+
+.select-items div,.select-selected {
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+}
+
+.select-items {
+  position: absolute;
+  background-color: #395f5f;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #ffffff;
+  border-radius: 50%;
+}
+
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+.container input:checked ~ .checkmark {
+  background-color: #395f5f;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.container .checkmark:after {
+ 	top: 9px;
+	left: 9px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: white;
+}
+
+input[type=number] {
+	padding: 5px;
+	border: 1px solid darkslategrey;
+}
+
+input[type=number]:focus {
+    border: 2px solid darkslategrey;
+}
+	
 
 
