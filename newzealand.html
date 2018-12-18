@@ -49,37 +49,52 @@ function translate_Maori()
 <p> In New Zealand they use the New Zealand Dollar as their currency. You can use the currency converter below to change euros to NZ$. </ p>
 <div class="form_div center">
 <form id="coverter_form3" action="javascript:void(0);">
-<input id="curr1_to_curr2" type=radio name=currency /> Convert EUR to NZD <br />
-<input id="curr2_to_curr1" type=radio name=currency /> Convert NZD to EUR <br />
-	Amount:<br />
-	<input id="money" type="number" name="quantity" />
+<label class="container"> Convert to NZD
+		<input id="curr1_to_curr2" type=radio name=currency checked="checked"/> 
+		<span class="checkmark"></span>
+	</label>
+	<label class="container"> Convert from NZD
+		<input id="curr2_to_curr1" type=radio name=currency checked="checked"/> 
+		<span class="checkmark"></span> 
+	</label>
+	<br />
+	Choose what currency you would like to convert to/from:
 	<br />
 	<br />
-	<script>
-  function get_exchange_rate(curr_key_1, curr_key_2) {
-	var xhttp = new XMLHttpRequest();
-	var base_url = "https://free.currencyconverterapi.com/api/v6/convert?q=";
-	var curr_1_2_key = curr_key_1 + "_" + curr_key_2;
-	var url= base_url + curr_1_2_key + "&compact=y";
-	xhttp.open("GET", url, false);
-	xhttp.send();
-	var responseJSON = JSON.parse(xhttp.responseText);
-	return responseJSON[curr_1_2_key]["val"];
-}
-
+	<div class="custom_select" style="width:300px">
+	<select id="currency_selector" name="curr1">
+		<option value="0">Select Currency</option>
+		<option value="1">EUR</option>
+		<option value="1">USD</option>
+		<option value="2">GBP</option>
+		<option value="3">AUD</option>
+		<option value="4">JPY</option>
+	</select>
+<script src="dropdownlist.js"></script>
+</div>
+<br />
+Amount:
+<br />
+<input id="money" type="number" name="quantity" />
+<br />
+<br />
+<script src="get_exchange_rate.js"></script>
+<script>
 function convert_currency() {
+	var e = document.getElementById("currency_selector");
+	var curr1 = e.options[e.selectedIndex].text;
 	console.log("hi")
 	var money_input = document.getElementById('money').value;
-	var x = get_exchange_rate( "EUR", "NZD");
+	var x = get_exchange_rate( curr1, "NZD");
 	if (document.getElementById("curr1_to_curr2").checked) {
 	var result = money_input*x;
 	document.getElementById("currency_converted").innerHTML =
-		"&euro;"+money_input+" is worth "+ result.toFixed(2) +" NZD.";
+		money_input+" "+curr1+" is worth "+ result.toFixed(2) +" NZD.";
 	}
 	else if (document.getElementById("curr2_to_curr1").checked) {
 	var result = money_input/x;
 	document.getElementById("currency_converted").innerHTML =
-		money_input+" NZD is worth &euro;"+ result.toFixed(2);
+		money_input+" NZD is worth "+ result.toFixed(2)+" "+curr1+".";
 		}
 }
 </script>
