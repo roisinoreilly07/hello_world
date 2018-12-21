@@ -7,3 +7,4 @@ function get_exchange_rate(curr_key_1, curr_key_2) {
 	xhttp.send();
 	var responseJSON = JSON.parse(xhttp.responseText);
 	return responseJSON[curr_1_2_key]["val"];
+}
