@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+  <title>Intro to CSS Animations</title>
+ 
+  <style>
+    body {
+      padding: 50px;
+    }
+   
+	#rectangle_1 {
+  height: 50px;
+  width: 100px;
+  background-color: #555;
+  transform-origin: center left;
+}
+
+.grow {
+  -webkit-animation-name: grow;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-fill-mode: forwards; 
+}
+	
+@keyframes grow {
+    0% {
+        transform: scaleX(0);
+    }
+    100% {
+        transform: scaleX(2);
+    }
+}
+
+  </style>
+</head>
+ 
+<body>
+<script>
+  function animation_1() {
+  document.getElementById("rectangle_1").className = "grow";
+  }
+  </script>
+ <div   id="rectangle_1">
+  </div>
+  <br />
+  <button onclick="animation_1()"> Click me! </button>
+  <br />
+
+</body>
+ 
+</html>

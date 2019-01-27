@@ -306,6 +306,42 @@ input[type=number] {
 input[type=number]:focus {
     border: 2px solid darkslategrey;
 }
+
+.bar_chart_background {
+	background-color: whitesmoke;
+	padding: 20px 0px;
+	width: 85%;
+	background: repeating-linear-gradient(
+	to right,
+	#2f4f4f,
+  #2f4f4f 1px,
+  #f5f5f5 1px,
+  #f5f5f5 20px
+);
+}
+
+#rectangle_1 {
+  height: 75px;
+  width: 125px;
+  background-color: seagreen;
+  transform-origin: center left;
+}
+
+.grow {
+  -webkit-animation-name: grow;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-fill-mode: forwards; 
+}
 	
+@keyframes grow {
+    0% {
+        transform: scaleX(0);
+    }
+    100% {
+        transform: scaleX(2);
+    }
+}
 
 

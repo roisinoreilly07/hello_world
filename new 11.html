@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+  <title>Intro to CSS Animations</title>
+  <style>
+  canvas {
+  width: 200px;
+  height:100px;
+  border: 1px solid black;
+  }
+  </style>
+ </head> 
+  
+  <body>
+  <canvas id="rectangle_canvas"> </canvas>
+  <script>
+  function print() {
+	console.log('hi');
+	}
+  function make_rectangle() {
+	var canvas = document.getElementById("rectangle_canvas");
+	print();
+	var ctx = canvas.getContext("2d");
+	ctx.rect(20, 20, 50, 25);
+	ctx.stroke();
+	}
+  </script>
+  <button onclick="make_rectangle()"> Click here! </button>-->
+  </body>
+ 
+</html>

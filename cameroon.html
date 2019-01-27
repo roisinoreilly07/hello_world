@@ -112,5 +112,24 @@ function convert_currency() {
   <p id="currency_converted"></p>
 </form> 
 </div>
+<br />
+<p> Cameroon has a varied climate. Some area are lush and tropical while others are dry and arid. The country remains hot throughout the year. 
+	You can see how the average temperature varies from winter to summer using the graph below </p>
+<div class="form_div center" style="padding: 0px">
+<h3 style="text-align:center; padding-top:20px"> Average <span id="season">Winter</span> Temperature in Cameroon </h3>
+<div class="bar_chart_background center">
+<script src="animation_1.js"> </script>
+<div id="rectangle_1">
+  </div>
+</div>
+<p style="padding-left:25px">0 5 10 15 20 25 30 35 40 </p>
+<br />
+<script>
+function change_word() {
+document.getElementById("season").innerHTML="Summer";
+}
+</script>
+<button class="button" onclick="animation_1(); change_word()" style="margin:0px 0px 20px 20px"> Click me! </button>
+</div>
 </body>
 </html>
